@@ -10,7 +10,8 @@ app.use(bodyParser.urlencoded({extended: false}));
 
 app.use(function (req, res) {
   res.setHeader('Content-Type', 'text/plain');
-  res.write('Headers:\n');
+  res.write('Verb: ' + req.method);
+  res.write('\nHeaders:\n');
   res.write(JSON.stringify(req.headers));
   res.write('\n\nBody:\n');
   res.end(JSON.stringify(req.body, null, 2))
